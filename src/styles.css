@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --font-display: "Newsreader", "Iowan Old Style", Georgia, serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  --color-bg: #0c0d11;
+  --color-bg-elevated: #12141a;
+  --color-surface: #171a21;
+  --color-surface-2: #1d212b;
+  --color-surface-3: #262b36;
+  --color-foreground: #eceae4;
+  --color-muted: #9a9aa3;
+  --color-subtle: #6f7380;
+  --color-border: rgb(236 234 228 / 10%);
+  --color-ring: rgb(232 224 208 / 35%);
+
+  --color-accent: #e8e0d0;
+  --color-accent-foreground: #14120e;
+
+  --color-export: #b56a3c;
+  --color-export-foreground: #fff8f2;
+
+  --color-success: #3f7d5c;
+  --color-success-foreground: #f3fbf6;
+  --color-warn: #8f6d38;
+  --color-warn-foreground: #fff8ea;
+  --color-danger: #a24848;
+  --color-danger-foreground: #fff6f5;
+  --color-sold: #5a5f78;
+  --color-sold-foreground: #f3f4fa;
+
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+
+  --text-2xs: 0.6875rem;
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  body {
+    background: var(--color-bg);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  ::selection {
+    background: color-mix(in oklab, var(--color-accent) 35%, transparent);
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-surface-3) transparent;
+  }
+}
